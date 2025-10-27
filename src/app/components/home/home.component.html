@@ -1,0 +1,11 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input #q matInput placeholder="Ex. Pizza" [value]="query()" (input)="query.set(q.value)">
+    </mat-form-field>
+</form>
+@for (user of filtered(); track user.id){
+<ul>
+    <li>{{ user.name }}</li>
+</ul>
+}
