@@ -1,11 +1,26 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input #q matInput placeholder="Ex. Pizza" [value]="query()" (input)="query.set(q.value)">
+        <input #q matInput placeholder="Ex. Max" [value]="query()" (input)="query.set(q.value)">
     </mat-form-field>
 </form>
-@for (user of filtered(); track user.id){
-<ul>
-    <li>{{ user.name }}</li>
-</ul>
-}
+<div class="grid">
+    @for (user of filtered(); track user.id){
+    <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"><img [src]="user.photo"></div>
+            <mat-card-title>{{user.name}}</mat-card-title>
+            <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="user.photo" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                <strong>Company: </strong><span>{{user.company.name}}</span>
+            </p>
+            <p>
+                <strong>Motto: </strong><span>{{user.company.catchPhrase}}</span>
+            </p>
+        </mat-card-content>
+    </mat-card>
+    }
+</div>

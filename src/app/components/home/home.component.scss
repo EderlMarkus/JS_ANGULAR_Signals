@@ -1,8 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
 .example-card {
     max-width: 400px;
 }
 
-.example-header-image {
-    background-image: url('/assets/shiba1.jpg');
-    background-size: cover;
+.example-header-image img {
+    height: 100%;
 }
