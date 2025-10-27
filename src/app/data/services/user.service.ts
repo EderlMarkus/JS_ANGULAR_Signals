@@ -3,7 +3,8 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export type User = {
-  "id": string,
+  "id": number,
+  "photo": string,
   "name": string,
   "username": string,
   "email": string,
