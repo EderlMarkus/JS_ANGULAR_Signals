@@ -1,0 +1,23 @@
+<form class="flex column">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput id="name" class="form-control" [control]="personForm.name" />
+        @for(error of personForm.name().errors(); track error){
+        <mat-error>{{error.message}}</mat-error>
+        }
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput id="username" class="form-control" [control]="personForm.username" />
+        @for(error of personForm.username().errors(); track error){
+        <mat-error>{{error.message}}</mat-error>
+        }
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput id="email" class="form-control" [control]="personForm.email" />
+        @for(error of personForm.email().errors(); track error){
+        <mat-error>{{error.message}}</mat-error>
+        }
+    </mat-form-field>
+</form>

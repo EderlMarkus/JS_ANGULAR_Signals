@@ -10,3 +10,19 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     padding: 2rem
 }
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.gap-2 {
+    gap: 2rem;
+}

@@ -2,30 +2,39 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-export type User = {
+export interface User extends Person {
   "id": number,
-  "photo": string,
+  "address": Address,
+  "phone": string,
+  "website": string,
+  "company": Company
+}
+
+export interface Person {
   "name": string,
   "username": string,
   "email": string,
-  "address": {
-    "street": string,
-    "suite": string,
-    "city": string,
-    "zipcode": string,
-    "geo": {
-      "lat": string,
-      "lng": string
-    }
-  },
-  "phone": string,
-  "website": string,
-  "company": {
-    "name": string,
-    "catchPhrase": string,
-    "bs": string
+  "photo"?: string,
+}
+
+export interface Address {
+  "street": string,
+  "suite": string,
+  "city": string,
+  "zipcode": string,
+  "geo": {
+    "lat": string,
+    "lng": string
   }
 }
+
+export interface Company {
+  "name": string,
+  "catchPhrase": string,
+  "bs": string
+}
+
+
 @Injectable({
   providedIn: 'root'
 })

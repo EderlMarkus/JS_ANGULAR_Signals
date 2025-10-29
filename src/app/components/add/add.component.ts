@@ -1,13 +1,15 @@
-import { Component, signal, input } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { User } from '../../data/services/user.service';
-import { form } from '@angular/forms/signals';
+import { form, Control } from '@angular/forms/signals';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { PersonComponent } from './form/person/person.component';
+import { AddressComponent } from './form/address/address.component';
 
 @Component({
   selector: 'app-add',
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
+  imports: [Control, MatFormFieldModule, MatInputModule, MatSelectModule, PersonComponent, AddressComponent],
   templateUrl: './add.component.html',
   styleUrl: './add.component.scss'
 })
