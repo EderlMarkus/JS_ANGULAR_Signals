@@ -4,7 +4,7 @@ import { provideRouter, RouterOutlet } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app/data/router/app.routes';
 import { MenuComponent } from './app/components/menu/menu.component';
-import { Component } from '@angular/core';
+import { Component, provideZoneChangeDetection } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -17,7 +17,7 @@ export class App { }
 
 bootstrapApplication(App, {
   providers: [
-    provideRouter(routes),
+    provideZoneChangeDetection(),provideRouter(routes),
     provideHttpClient()
   ]
 }).catch((err) => console.error(err));

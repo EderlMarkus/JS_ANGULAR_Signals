@@ -1,10 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, input } from '@angular/core';
 import { User } from '../../data/services/user.service';
 import { form } from '@angular/forms/signals';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-add',
-  imports: [],
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './add.component.html',
   styleUrl: './add.component.scss'
 })
@@ -35,5 +38,5 @@ export class AddComponent {
     }
   });
 
-  protected readonly userForm = form()
+  protected readonly userForm = form(this.userSig)
 }
