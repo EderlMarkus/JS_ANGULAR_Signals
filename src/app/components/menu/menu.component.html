@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <button mat-fab extended color="primary" [matMenuTriggerFor]="menu">
+        Menu
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="">Home</button>
+        <button mat-menu-item routerLink="add">Add</button>
+    </mat-menu>
+</div>
