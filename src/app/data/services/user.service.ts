@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 export interface User extends Person {
-  "id": number,
+  "id": string,
   "address": Address,
   "phone": string,
   "website": string,
@@ -45,5 +45,9 @@ export class UserService {
 
   public getUsers(): Observable<User[]> {
     return this._httpClient.get<User[]>(`${this._apiUrl}/users`);
+  }
+
+  public createNewUser(user: User): Observable<any> {
+    return this._httpClient.post(`${this._apiUrl}/users`, user);
   }
 }

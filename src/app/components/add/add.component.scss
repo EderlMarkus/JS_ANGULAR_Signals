@@ -1,0 +1,11 @@
+mat-grid-tile {
+    background: #6D94C5;
+
+    &:nth-child(odd) {
+        background: #CBDCEB;
+    }
+}
+
+mat-grid-list {
+    margin: 1rem
+}

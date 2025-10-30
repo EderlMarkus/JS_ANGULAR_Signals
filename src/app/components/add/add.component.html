@@ -1,4 +1,11 @@
-<form class="flex gap-2">
-    <app-person></app-person>
-    <app-address></app-address>
+<form>
+    <mat-grid-list cols="2" rowHeight="3:1">
+        <mat-grid-tile><app-person [form]="userForm"></app-person></mat-grid-tile>
+        <mat-grid-tile><app-address [form]="userForm"></app-address></mat-grid-tile>
+        <mat-grid-tile [colspan]="2"><app-company [form]="userForm"></app-company></mat-grid-tile>
+    </mat-grid-list>
+    <div class="flex align-center justify-center">
+        <button type="button" matButton="filled" [disabled]="!userForm().valid() || userForm().submitting()"
+            (click)="saveProposal()">Save</button>
+    </div>
 </form>

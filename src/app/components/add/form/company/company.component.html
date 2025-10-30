@@ -1,0 +1,28 @@
+<h2>Company:</h2>
+<div class="flex column">
+    <div class="row flex cloumn gap-2">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput id="name" class="form-control" [control]="form.company.name" />
+            @for(error of form.company.name().errors(); track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>catchPhrase</mat-label>
+            <input matInput id="catchPhrase" class="form-control" [control]="form.company.catchPhrase" />
+            @for(error of form.company.catchPhrase().errors(); track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field>
+            <mat-label>BS</mat-label>
+            <input matInput id="bs" class="form-control" [control]="form.company.bs" />
+            @for(error of form.company.bs().errors(); track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+        </mat-form-field>
+    </div>
+</div>

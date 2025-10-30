@@ -1,23 +1,29 @@
-<form class="flex column">
-    <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput id="name" class="form-control" [control]="personForm.name" />
-        @for(error of personForm.name().errors(); track error){
-        <mat-error>{{error.message}}</mat-error>
-        }
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput id="username" class="form-control" [control]="personForm.username" />
-        @for(error of personForm.username().errors(); track error){
-        <mat-error>{{error.message}}</mat-error>
-        }
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput id="email" class="form-control" [control]="personForm.email" />
-        @for(error of personForm.email().errors(); track error){
-        <mat-error>{{error.message}}</mat-error>
-        }
-    </mat-form-field>
-</form>
+<h2>Person:</h2>
+
+<div class="flex column">
+    <div class="row flex cloumn gap-2">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput id="name" class="form-control" [control]="form.name" />
+            @for(error of form.name().errors(); track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput id="username" class="form-control" [control]="form.username" />
+            @for(error of form.username().errors(); track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput id="email" class="form-control" [control]="form.email" />
+            @for(error of form.email().errors(); track error){
+            <mat-error>{{error.message}}</mat-error>
+            }
+        </mat-form-field>
+    </div>
+</div>

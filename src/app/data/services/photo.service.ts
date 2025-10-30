@@ -9,7 +9,7 @@ import { User } from './user.service';
 export class PhotoService {
 
   public getPhoto(user: User) {
-    const femaleIds = [1, 3, 4, 5, 6, 9, 10]
+    const femaleIds = ["1", "3", "4", "5", "6", "9", "10"]
     return femaleIds.includes(user.id) ? "./assets/female.jpg" : "./assets/male.jpg"
   }
 

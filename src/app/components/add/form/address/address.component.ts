@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { Address } from '../../../../data/services/user.service';
-import { Control, form } from '@angular/forms/signals';
+import { Component, Input, signal } from '@angular/core';
+import { Address, User } from '../../../../data/services/user.service';
+import { Control, Field, form } from '@angular/forms/signals';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -11,17 +11,5 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './address.component.scss'
 })
 export class AddressComponent {
-  protected readonly addressSig = signal<Address>({
-    "street": "",
-    "suite": "",
-    "city": "",
-    "zipcode": "",
-    "geo": {
-      "lat": "",
-      "lng": ""
-    }
-  }
-  )
-
-  protected readonly addressForm = form(this.addressSig);
+  @Input() form!: Field<User, string | number>
 }
